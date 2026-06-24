@@ -35,7 +35,7 @@ address
 
 
 const data = await res.json();
-
+console.log("API RESPONSE:", data);
 setReply(data.reply);
 
 setLoading(false);
