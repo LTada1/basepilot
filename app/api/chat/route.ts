@@ -12,6 +12,7 @@ import { walletHealth } from "@/app/lib/tools/health";
 import { getWalletActivity } from "@/app/lib/tools/activity";
 import { analyzeTokenRisk } from "@/app/lib/tools/tokenRisk";
 import { getWalletScore } from "@/app/lib/tools/score";
+import { getPortfolioValue } from "@/app/lib/tools/portfolioValue";
 
 const groq = new Groq({
 
@@ -103,6 +104,34 @@ TOKEN HOLDINGS
 
 ${tokens}
 
+
+`;
+
+}
+
+}
+
+// =========================
+// PORTFOLIO VALUE
+// =========================
+
+if(
+query.includes("value") ||
+query.includes("worth") ||
+query.includes("net worth") ||
+query.includes("portfolio value")
+){
+
+if(address){
+
+const portfolioValue =
+await getPortfolioValue(address);
+
+toolContext += `
+
+PORTFOLIO VALUE
+
+${JSON.stringify(portfolioValue,null,2)}
 
 `;
 
