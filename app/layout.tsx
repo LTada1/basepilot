@@ -3,8 +3,8 @@ import Providers from "./components/Providers";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "BaseHub Alpha Agent",
-  description: "AI Agent built on Base",
+  title: "BasePilot",
+  description: "AI-powered wallet intelligence for Base",
   other: {
     "base:app_id": "6a3ab933303847e6f69746ba",
   },
