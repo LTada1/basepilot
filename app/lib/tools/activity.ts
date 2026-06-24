@@ -13,7 +13,7 @@ process.env.ALCHEMY_URL
 });
 
 
-export async function getActivity(address:string){
+export async function getWalletActivity(address:string){
 
 try{
 
